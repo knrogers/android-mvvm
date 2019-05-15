@@ -2,14 +2,12 @@ package com.roguekingapps.bgdb
 
 class BoardGamesRepositoryImpl(private val service: BoardGamesService) : BoardGamesRepository {
 
-    override suspend fun getBoardGames(): List<String> {
-        return service.getBoardGames().await()
-    }
+    override suspend fun getBoardGames(): Response<List<String>> = service.getBoardGames().await()
 
 }
 
 interface BoardGamesRepository {
 
-    suspend fun getBoardGames(): List<String>
+    suspend fun getBoardGames(): Response<List<String>>
 
 }

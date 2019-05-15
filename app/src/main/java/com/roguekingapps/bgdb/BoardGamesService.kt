@@ -4,6 +4,6 @@ import kotlinx.coroutines.Deferred
 
 interface BoardGamesService {
 
-    fun getBoardGames(): Deferred<List<String>>
+    fun getBoardGames(): Deferred<Response<List<String>>>
 
 }
