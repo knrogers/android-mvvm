@@ -1,6 +1,8 @@
 package com.roguekingapps.bgdb
 
 import android.arch.core.executor.testing.InstantTaskExecutorRule
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Rule
@@ -12,7 +14,9 @@ import kotlin.test.assertEquals
 
 class BoardGamesViewModelTest {
 
-    private val viewModel: BoardGamesViewModel by lazy { BoardGamesViewModel(boardGamesRepository) }
+    private val viewModel: BoardGamesViewModel by lazy {
+        BoardGamesViewModel(boardGamesRepository, CoroutineScope(Dispatchers.Unconfined))
+    }
 
     @Mock
     lateinit var boardGamesRepository: BoardGamesRepository
