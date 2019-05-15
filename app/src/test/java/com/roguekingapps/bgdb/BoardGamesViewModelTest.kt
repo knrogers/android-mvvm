@@ -12,7 +12,7 @@ import kotlin.test.assertEquals
 
 class BoardGamesViewModelTest {
 
-    private lateinit var viewModel: BoardGamesViewModel
+    private val viewModel: BoardGamesViewModel by lazy { BoardGamesViewModel(boardGamesRepository) }
 
     @Mock
     lateinit var boardGamesRepository: BoardGamesRepository
@@ -21,10 +21,7 @@ class BoardGamesViewModelTest {
     val rule = InstantTaskExecutorRule()
 
     @Before
-    fun setUp() {
-        MockitoAnnotations.initMocks(this)
-        viewModel = BoardGamesViewModel(boardGamesRepository)
-    }
+    fun setUp() = MockitoAnnotations.initMocks(this)
 
     @Test
     fun `Get board games succeeds`() {
