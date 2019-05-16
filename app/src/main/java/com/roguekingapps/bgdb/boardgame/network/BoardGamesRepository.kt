@@ -1,4 +1,4 @@
-package com.roguekingapps.bgdb
+package com.roguekingapps.bgdb.boardgame.network
 
 class BoardGamesRepositoryImpl(private val service: BoardGamesService) : BoardGamesRepository {
 

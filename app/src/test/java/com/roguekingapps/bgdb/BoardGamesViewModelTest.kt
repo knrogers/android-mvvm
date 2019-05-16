@@ -1,7 +1,9 @@
 package com.roguekingapps.bgdb
 
 import android.arch.core.executor.testing.InstantTaskExecutorRule
-import com.roguekingapps.bgdb.ResponseResult.Success
+import com.roguekingapps.bgdb.boardgame.network.BoardGamesRepository
+import com.roguekingapps.bgdb.boardgame.network.ResponseResult.Success
+import com.roguekingapps.bgdb.boardgame.viewmodel.BoardGamesViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking

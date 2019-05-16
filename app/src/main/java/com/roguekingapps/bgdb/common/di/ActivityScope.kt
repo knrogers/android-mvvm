@@ -1,4 +1,4 @@
-package com.roguekingapps.bgdb
+package com.roguekingapps.bgdb.common.di
 
 import javax.inject.Scope
 

@@ -1,7 +1,11 @@
 package com.roguekingapps.bgdb
 
-import com.roguekingapps.bgdb.ResponseResult.Error
-import com.roguekingapps.bgdb.ResponseResult.Success
+import com.roguekingapps.bgdb.boardgame.network.BoardGamesRepository
+import com.roguekingapps.bgdb.boardgame.network.BoardGamesRepositoryImpl
+import com.roguekingapps.bgdb.boardgame.network.BoardGamesService
+import com.roguekingapps.bgdb.boardgame.network.ResponseResult.Error
+import com.roguekingapps.bgdb.boardgame.network.ResponseResult.Success
+import com.roguekingapps.bgdb.boardgame.network.toResponse
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.runBlocking
 import org.junit.Before

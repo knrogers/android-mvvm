@@ -1,7 +1,7 @@
-package com.roguekingapps.bgdb
+package com.roguekingapps.bgdb.boardgame.network
 
-import com.roguekingapps.bgdb.ResponseResult.Error
-import com.roguekingapps.bgdb.ResponseResult.Success
+import com.roguekingapps.bgdb.boardgame.network.ResponseResult.Error
+import com.roguekingapps.bgdb.boardgame.network.ResponseResult.Success
 import kotlinx.coroutines.Deferred
 import retrofit2.Response
 

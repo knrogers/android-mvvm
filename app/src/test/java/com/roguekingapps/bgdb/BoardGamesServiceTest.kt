@@ -1,7 +1,8 @@
 package com.roguekingapps.bgdb
 
-import com.roguekingapps.bgdb.ResponseResult.Error
-import com.roguekingapps.bgdb.ResponseResult.Success
+import com.roguekingapps.bgdb.boardgame.network.ResponseResult.Error
+import com.roguekingapps.bgdb.boardgame.network.ResponseResult.Success
+import com.roguekingapps.bgdb.boardgame.network.toResponse
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.runBlocking
 import okhttp3.ResponseBody

@@ -1,7 +1,12 @@
-package com.roguekingapps.bgdb
+package com.roguekingapps.bgdb.launcher
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.roguekingapps.bgdb.R
+import com.roguekingapps.bgdb.launcher.di.MainActivityModule
+import com.roguekingapps.bgdb.boardgame.di.BoardGamesViewModelModule
+import com.roguekingapps.bgdb.boardgame.viewmodel.BoardGamesViewModel
+import com.roguekingapps.bgdb.launcher.di.DaggerMainActivityComponent
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +22,6 @@ class MainActivity : AppCompatActivity() {
             .boardGamesViewModelModule(BoardGamesViewModelModule())
             .build()
             .inject(this)
-        // println("viewModel is: $viewModel")
     }
 
 }

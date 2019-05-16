@@ -1,5 +1,6 @@
-package com.roguekingapps.bgdb
+package com.roguekingapps.bgdb.boardgame.di
 
+import com.roguekingapps.bgdb.boardgame.network.BoardGamesService
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
