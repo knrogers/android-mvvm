@@ -10,7 +10,6 @@ import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito.`when`
-import org.mockito.Mockito.mock
 import org.mockito.MockitoAnnotations
 import kotlin.test.assertEquals
 
@@ -30,7 +29,7 @@ class BoardGamesViewModelTest {
     fun setUp() = MockitoAnnotations.initMocks(this)
 
     @Test
-    fun `Get board games succeeds`() {
+    fun `Get Board Games Succeeds`() {
         runBlocking {
             val success = Success(emptyList<String>())
             `when`(boardGamesRepository.getBoardGames()).thenReturn(success)

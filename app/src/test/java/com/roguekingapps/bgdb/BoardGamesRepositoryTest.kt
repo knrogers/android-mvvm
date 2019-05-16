@@ -27,7 +27,7 @@ class BoardGamesRepositoryTest {
     fun setUp() = MockitoAnnotations.initMocks(this)
 
     @Test
-    fun `Get board games succeeds`() {
+    fun `Get Board Games Succeeds`() {
         runBlocking {
             val boardGames = arrayListOf("Eclipse", "Mage Knight")
             `when`(service.getBoardGames()).thenReturn(deferred)
@@ -37,7 +37,7 @@ class BoardGamesRepositoryTest {
     }
 
     @Test
-    fun `Get board games fails`() {
+    fun `Get Board Games Fails`() {
         runBlocking {
             `when`(service.getBoardGames()).thenReturn(deferred)
             `when`(deferred.toResponse()).thenReturn(Error())
