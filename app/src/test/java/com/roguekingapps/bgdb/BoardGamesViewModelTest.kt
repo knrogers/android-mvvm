@@ -1,7 +1,7 @@
 package com.roguekingapps.bgdb
 
 import android.arch.core.executor.testing.InstantTaskExecutorRule
-import com.roguekingapps.bgdb.Response.Success
+import com.roguekingapps.bgdb.ResponseResult.Success
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking

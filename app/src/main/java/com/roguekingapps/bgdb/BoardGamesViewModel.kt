@@ -11,8 +11,8 @@ class BoardGamesViewModel(
     private val scope: CoroutineScope = CoroutineScope(Dispatchers.IO)
 ) {
 
-    private val _boardGames = MutableLiveData<Response<List<String>>>()
-    val boardGames: LiveData<Response<List<String>>>
+    private val _boardGames = MutableLiveData<ResponseResult<List<String>>>()
+    val boardGames: LiveData<ResponseResult<List<String>>>
         get() = _boardGames
 
     fun getBoardGames() = scope.launch { _boardGames.postValue(boardGamesRepository.getBoardGames()) }
