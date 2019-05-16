@@ -32,7 +32,7 @@ class BoardGamesViewModelTest {
     @Test
     fun `Get board games succeeds`() {
         runBlocking {
-            @Suppress("UNCHECKED_CAST") val success = mock(Success::class.java) as Success<List<String>>
+            val success = Success(emptyList<String>())
             `when`(boardGamesRepository.getBoardGames()).thenReturn(success)
             viewModel.getBoardGames()
             assertEquals(success, viewModel.boardGames.value)
