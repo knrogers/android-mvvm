@@ -6,9 +6,10 @@ import dagger.Provides
 import retrofit2.Retrofit
 
 @Module
-class BoardGamesRepositoryModule {
+object BoardGamesRepositoryModule {
 
     @Provides
+    @JvmStatic
     fun provideBoardGamesService(): BoardGamesService =
         Retrofit.Builder()
             .baseUrl("https://www")

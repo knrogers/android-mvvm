@@ -1,21 +1,20 @@
 package com.roguekingapps.bgdb.launcher.di
 
-import com.roguekingapps.bgdb.launcher.MainActivity
+import com.roguekingapps.bgdb.boardgame.viewmodel.BoardGamesViewModel
 import com.roguekingapps.bgdb.common.di.ActivityScope
-import com.roguekingapps.bgdb.boardgame.di.BoardGamesRepositoryModule
-import com.roguekingapps.bgdb.boardgame.di.BoardGamesViewModelModule
+import com.roguekingapps.bgdb.launcher.ui.MainActivity
+import dagger.BindsInstance
 import dagger.Component
 
 @ActivityScope
-@Component(
-    modules = [
-        MainActivityModule::class,
-        BoardGamesViewModelModule::class,
-        BoardGamesRepositoryModule::class
-    ]
-)
+@Component(modules = [MainActivityModule::class])
 interface MainActivityComponent {
 
-    fun inject(activity: MainActivity)
+    @Component.Factory
+    interface Factory {
+        fun create(@BindsInstance activity: MainActivity): MainActivityComponent
+    }
+
+    val viewModel: BoardGamesViewModel
 
 }

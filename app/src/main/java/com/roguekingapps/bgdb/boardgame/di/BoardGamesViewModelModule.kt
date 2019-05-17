@@ -6,10 +6,11 @@ import com.roguekingapps.bgdb.boardgame.network.BoardGamesService
 import dagger.Module
 import dagger.Provides
 
-@Module
-class BoardGamesViewModelModule {
+@Module(includes = [BoardGamesRepositoryModule::class])
+object BoardGamesViewModelModule {
 
     @Provides
+    @JvmStatic
     fun provideBoardGamesRepository(service: BoardGamesService): BoardGamesRepository =
         BoardGamesRepositoryImpl(service)
 
