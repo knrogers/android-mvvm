@@ -5,9 +5,9 @@ import com.roguekingapps.bgdb.boardgame.network.BoardGamesRepositoryImpl
 import com.roguekingapps.bgdb.boardgame.network.BoardGamesService
 import com.roguekingapps.bgdb.boardgame.network.ResponseResult.Error
 import com.roguekingapps.bgdb.boardgame.network.ResponseResult.Success
-import com.roguekingapps.bgdb.boardgame.network.toResponse
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.runBlocking
+import okhttp3.ResponseBody
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mock
@@ -25,7 +25,7 @@ class BoardGamesRepositoryTest {
     lateinit var service: BoardGamesService
 
     @Mock
-    lateinit var deferred: Deferred<Response<List<String>>>
+    lateinit var deferred: Deferred<Response<String>>
 
     @Before
     fun setUp() = MockitoAnnotations.initMocks(this)
@@ -33,7 +33,7 @@ class BoardGamesRepositoryTest {
     @Test
     fun `Get Board Games Succeeds`() {
         runBlocking {
-            val boardGames = arrayListOf("Eclipse", "Mage Knight")
+            val boardGames = "Eclipse, Mage Knight"
             `when`(service.getBoardGames()).thenReturn(deferred)
             `when`(deferred.await()).thenReturn(Response.success(boardGames))
             assertEquals(boardGames, (boardGamesRepository.getBoardGames() as Success).data)
@@ -44,7 +44,7 @@ class BoardGamesRepositoryTest {
     fun `Get Board Games Fails`() {
         runBlocking {
             `when`(service.getBoardGames()).thenReturn(deferred)
-            `when`(deferred.toResponse()).thenReturn(Error())
+            `when`(deferred.await()).thenReturn(Response.error(400, ResponseBody.create(null, "get board games failed")))
             assertTrue(boardGamesRepository.getBoardGames() is Error)
         }
     }

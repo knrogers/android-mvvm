@@ -33,7 +33,7 @@ class BoardGamesViewModelTest {
     @Test
     fun `Get Board Games Succeeds`() {
         runBlocking {
-            val success = Success(emptyList<String>())
+            val success = Success("get board games successful")
             `when`(boardGamesRepository.getBoardGames()).thenReturn(success)
             viewModel.getBoardGames()
             assertEquals(success, viewModel.boardGames.value)
