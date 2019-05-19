@@ -1,6 +1,7 @@
 package com.roguekingapps.bgdb.launcher.di
 
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProviders
 import com.roguekingapps.bgdb.boardgame.di.BoardGamesViewModelModule
 import com.roguekingapps.bgdb.boardgame.network.BoardGamesRepository
 import com.roguekingapps.bgdb.boardgame.viewmodel.BoardGamesViewModel

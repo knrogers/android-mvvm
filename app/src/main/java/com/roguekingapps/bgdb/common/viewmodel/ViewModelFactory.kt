@@ -1,7 +1,7 @@
 package com.roguekingapps.bgdb.common.viewmodel
 
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 
 class ViewModelFactory(private val viewModel: ViewModel) : ViewModelProvider.NewInstanceFactory() {
 
