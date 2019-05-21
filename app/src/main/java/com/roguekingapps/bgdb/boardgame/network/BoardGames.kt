@@ -17,5 +17,5 @@ data class BoardGame(
     @Attribute val rank: String,
     @Path("name") @Attribute(name = "value") val name: String,
     @Path("thumbnail") @Attribute(name = "value") val thumbnailUrl: String,
-    @Path("yearpublished") @Attribute(name = "value") val yearPublished: String
+    @Path("yearpublished") @Attribute(name = "value") val year: String
 )

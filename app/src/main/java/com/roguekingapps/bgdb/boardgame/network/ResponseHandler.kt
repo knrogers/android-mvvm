@@ -16,11 +16,8 @@ interface ResponseHandler<T : Any> {
 suspend fun <T : Any> awaitResponse(handler: ResponseHandler<T>): ResponseResult<T> {
     return try {
         val response = handler.doRequest()
-        if (response.isSuccessful) {
-            handler.onSuccess(response)
-        } else {
-            handler.onFailure()
-        }
+        if (response.isSuccessful) handler.onSuccess(response)
+        else handler.onFailure()
     } catch (e: Exception) {
         handler.onException()
     }

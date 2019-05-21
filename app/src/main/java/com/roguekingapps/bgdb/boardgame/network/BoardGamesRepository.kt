@@ -7,7 +7,7 @@ import retrofit2.Response
 class BoardGamesRepositoryImpl(private val service: BoardGamesService) : BoardGamesRepository {
 
     override suspend fun getBoardGames(): ResponseResult<BoardGames> =
-        awaitResponse(object: ResponseHandler<BoardGames> {
+        awaitResponse(object : ResponseHandler<BoardGames> {
 
             override suspend fun doRequest(): Response<BoardGames> = service.getBoardGames().await()
 
