@@ -32,6 +32,7 @@ dependencies {
 
     implementation "androidx.appcompat:appcompat:$androidx_appcompat_version"
     implementation "androidx.constraintlayout:constraintlayout:$androidx_constraint_layout_version"
+    implementation "androidx.recyclerview:recyclerview:$androidx_recycler_view_version"
     implementation "androidx.lifecycle:lifecycle-extensions:$androidx_lifecycle_extensions_version"
 
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
@@ -44,6 +45,8 @@ dependencies {
 
     implementation "com.google.dagger:dagger:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
+
+    implementation "com.squareup.picasso:picasso:$picasso_version"
 
     testImplementation "junit:junit:$junit_version"
     testImplementation "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
