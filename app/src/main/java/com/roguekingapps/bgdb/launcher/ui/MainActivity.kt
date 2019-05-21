@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.roguekingapps.bgdb.R
 import com.roguekingapps.bgdb.application.BGDbApplication
+import com.roguekingapps.bgdb.boardgame.network.ResponseResult.Error
+import com.roguekingapps.bgdb.boardgame.network.ResponseResult.Success
 import com.roguekingapps.bgdb.boardgame.viewmodel.BoardGamesViewModel
 import com.roguekingapps.bgdb.launcher.di.DaggerMainActivityComponent
 import kotlinx.android.synthetic.main.activity_main.mainTextView
@@ -23,7 +25,11 @@ class MainActivity : AppCompatActivity() {
         viewModel.getBoardGames()
 
         viewModel.boardGames.observe(this, Observer {
-            mainTextView.text = it.toString()
+            val text = when (it) {
+                is Success -> it.data.boardGames.toString()
+                is Error -> it.toString()
+            }
+            mainTextView.text = text
         })
     }
 

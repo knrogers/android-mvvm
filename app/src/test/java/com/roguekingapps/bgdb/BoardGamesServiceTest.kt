@@ -1,9 +1,12 @@
 package com.roguekingapps.bgdb
 
+import com.nhaarman.mockitokotlin2.mock
+import com.nhaarman.mockitokotlin2.whenever
+import com.roguekingapps.bgdb.boardgame.network.BoardGames
+import com.roguekingapps.bgdb.boardgame.network.ResponseHandler
 import com.roguekingapps.bgdb.boardgame.network.ResponseResult.Error
 import com.roguekingapps.bgdb.boardgame.network.ResponseResult.Success
 import com.roguekingapps.bgdb.boardgame.network.awaitResponse
-import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.runBlocking
 import okhttp3.ResponseBody
 import org.junit.Test
@@ -13,30 +16,35 @@ import kotlin.test.assertTrue
 
 class BoardGamesServiceTest {
 
-    private val deferred = CompletableDeferred<Response<String>>()
+    private val handler = mock<ResponseHandler<BoardGames>>()
 
     @Test
     fun `Await Response Succeeds`() {
         runBlocking {
-            val data = "await response successful"
-            deferred.complete(Response.success(data))
-            assertEquals(data, (awaitResponse { deferred } as Success).data)
+            val data = BoardGames(emptyList())
+            val response = Response.success(data)
+            whenever(handler.doRequest()).thenReturn(response)
+            whenever(handler.onSuccess(response)).thenReturn(Success(data))
+            assertEquals(data, (awaitResponse(handler) as Success).data)
         }
     }
 
     @Test
     fun `Await Response Fails`() {
         runBlocking {
-            deferred.complete(Response.error(400, ResponseBody.create(null, "await response failed")))
-            assertTrue(awaitResponse { deferred } is Error)
+            val response = Response.error<BoardGames>(400, ResponseBody.create(null, "await response failed"))
+            whenever(handler.doRequest()).thenReturn(response)
+            whenever(handler.onFailure()).thenReturn(Error())
+            assertTrue(awaitResponse(handler) is Error)
         }
     }
 
     @Test
     fun `Await Response Throws Exception`() {
         runBlocking {
-            deferred.completeExceptionally(Exception())
-            assertTrue(awaitResponse { deferred } is Error)
+            whenever(handler.doRequest()).then { throw Exception() }
+            whenever(handler.onException()).thenReturn(Error())
+            assertTrue(awaitResponse(handler) is Error)
         }
     }
 
