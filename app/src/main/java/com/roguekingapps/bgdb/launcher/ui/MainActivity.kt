@@ -60,7 +60,9 @@ class MainActivity : AppCompatActivity() {
             val boardGame = boardGames[position]
             holder.nameTextView.text = boardGame.name
             holder.yearTextView.text = boardGame.year
-            Picasso.get().load(boardGame.thumbnailUrl).into(holder.thumbnailImageView)
+            if (!boardGame.thumbnailUrl.isNullOrEmpty()) {
+                Picasso.get().load(boardGame.thumbnailUrl).into(holder.thumbnailImageView)
+            }
         }
 
         override fun getItemCount(): Int = boardGames.size
