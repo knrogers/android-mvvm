@@ -1,4 +1,4 @@
-package com.roguekingapps.bgdb.boardgame.network
+package com.roguekingapps.bgdb.data
 
 import com.tickaroo.tikxml.annotation.Attribute
 import com.tickaroo.tikxml.annotation.Element

@@ -1,12 +1,11 @@
-package com.roguekingapps.bgdb.boardgame.di
+package com.roguekingapps.bgdb.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
-import com.roguekingapps.bgdb.boardgame.network.BoardGamesRepository
-import com.roguekingapps.bgdb.boardgame.viewmodel.BoardGamesViewModel
-import com.roguekingapps.bgdb.common.di.ViewModelKey
-import com.roguekingapps.bgdb.common.viewmodel.ViewModelFactory
-import com.roguekingapps.bgdb.launcher.ui.MainActivity
+import com.roguekingapps.bgdb.data.BoardGamesRepository
+import com.roguekingapps.bgdb.ui.boardgame.BoardGamesViewModel
+import com.roguekingapps.bgdb.util.ViewModelFactory
+import com.roguekingapps.bgdb.ui.launcher.MainActivity
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap

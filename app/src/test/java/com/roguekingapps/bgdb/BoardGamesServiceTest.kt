@@ -2,11 +2,11 @@ package com.roguekingapps.bgdb
 
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
-import com.roguekingapps.bgdb.boardgame.network.BoardGames
-import com.roguekingapps.bgdb.boardgame.network.ResponseHandler
-import com.roguekingapps.bgdb.boardgame.network.ResponseResult.Error
-import com.roguekingapps.bgdb.boardgame.network.ResponseResult.Success
-import com.roguekingapps.bgdb.boardgame.network.awaitResponse
+import com.roguekingapps.bgdb.data.BoardGames
+import com.roguekingapps.bgdb.data.ResponseHandler
+import com.roguekingapps.bgdb.data.ResponseResult.Error
+import com.roguekingapps.bgdb.data.ResponseResult.Success
+import com.roguekingapps.bgdb.data.awaitResponse
 import kotlinx.coroutines.runBlocking
 import okhttp3.ResponseBody
 import org.junit.Test

@@ -1,8 +1,7 @@
-package com.roguekingapps.bgdb.application.di
+package com.roguekingapps.bgdb.di
 
 import com.roguekingapps.bgdb.application.BGDbApplication
-import com.roguekingapps.bgdb.common.di.ViewModelFactoryModule
-import com.roguekingapps.bgdb.common.viewmodel.ViewModelFactory
+import com.roguekingapps.bgdb.util.ViewModelFactory
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton

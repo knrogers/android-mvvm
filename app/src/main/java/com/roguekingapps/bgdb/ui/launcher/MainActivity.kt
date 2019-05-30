@@ -1,4 +1,4 @@
-package com.roguekingapps.bgdb.launcher.ui
+package com.roguekingapps.bgdb.ui.launcher
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,12 +12,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.roguekingapps.bgdb.R
 import com.roguekingapps.bgdb.application.BGDbApplication
-import com.roguekingapps.bgdb.boardgame.network.BoardGame
-import com.roguekingapps.bgdb.boardgame.network.ResponseResult.Error
-import com.roguekingapps.bgdb.boardgame.network.ResponseResult.Success
-import com.roguekingapps.bgdb.boardgame.viewmodel.BoardGamesViewModel
-import com.roguekingapps.bgdb.launcher.di.DaggerMainActivityComponent
-import com.roguekingapps.bgdb.launcher.ui.MainActivity.BoardGamesAdapter.BoardGameViewHolder
+import com.roguekingapps.bgdb.data.BoardGame
+import com.roguekingapps.bgdb.data.ResponseResult.Error
+import com.roguekingapps.bgdb.data.ResponseResult.Success
+import com.roguekingapps.bgdb.di.DaggerMainActivityComponent
+import com.roguekingapps.bgdb.ui.boardgame.BoardGamesViewModel
+import com.roguekingapps.bgdb.ui.launcher.MainActivity.BoardGamesAdapter.BoardGameViewHolder
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.mainRecyclerView
 import kotlinx.android.synthetic.main.activity_main.mainTextView

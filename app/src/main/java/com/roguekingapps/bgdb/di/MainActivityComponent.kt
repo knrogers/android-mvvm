@@ -1,9 +1,6 @@
-package com.roguekingapps.bgdb.launcher.di
+package com.roguekingapps.bgdb.di
 
-import com.roguekingapps.bgdb.application.di.ApplicationComponent
-import com.roguekingapps.bgdb.boardgame.di.BoardGamesViewModelModule
-import com.roguekingapps.bgdb.common.di.ActivityScope
-import com.roguekingapps.bgdb.launcher.ui.MainActivity
+import com.roguekingapps.bgdb.ui.launcher.MainActivity
 import dagger.BindsInstance
 import dagger.Component
 

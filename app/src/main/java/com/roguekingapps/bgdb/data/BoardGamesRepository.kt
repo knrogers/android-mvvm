@@ -1,7 +1,7 @@
-package com.roguekingapps.bgdb.boardgame.network
+package com.roguekingapps.bgdb.data
 
-import com.roguekingapps.bgdb.boardgame.network.ResponseResult.Error
-import com.roguekingapps.bgdb.boardgame.network.ResponseResult.Success
+import com.roguekingapps.bgdb.data.ResponseResult.Error
+import com.roguekingapps.bgdb.data.ResponseResult.Success
 import retrofit2.Response
 
 class BoardGamesRepositoryImpl(private val service: BoardGamesService) : BoardGamesRepository {

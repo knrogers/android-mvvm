@@ -1,4 +1,4 @@
-package com.roguekingapps.bgdb.boardgame.network
+package com.roguekingapps.bgdb.data
 
 import kotlinx.coroutines.Deferred
 import retrofit2.Response

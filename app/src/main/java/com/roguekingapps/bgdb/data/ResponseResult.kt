@@ -1,4 +1,4 @@
-package com.roguekingapps.bgdb.boardgame.network
+package com.roguekingapps.bgdb.data
 
 sealed class ResponseResult<out T : Any> {
     data class Success<out T : Any>(val data: T) : ResponseResult<T>()

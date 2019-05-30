@@ -1,11 +1,11 @@
-package com.roguekingapps.bgdb.boardgame.viewmodel
+package com.roguekingapps.bgdb.ui.boardgame
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.roguekingapps.bgdb.boardgame.network.BoardGames
-import com.roguekingapps.bgdb.boardgame.network.BoardGamesRepository
-import com.roguekingapps.bgdb.boardgame.network.ResponseResult
+import com.roguekingapps.bgdb.data.BoardGames
+import com.roguekingapps.bgdb.data.BoardGamesRepository
+import com.roguekingapps.bgdb.data.ResponseResult
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

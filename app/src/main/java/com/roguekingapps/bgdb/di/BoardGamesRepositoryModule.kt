@@ -1,8 +1,8 @@
-package com.roguekingapps.bgdb.boardgame.di
+package com.roguekingapps.bgdb.di
 
-import com.roguekingapps.bgdb.boardgame.network.BoardGamesRepository
-import com.roguekingapps.bgdb.boardgame.network.BoardGamesRepositoryImpl
-import com.roguekingapps.bgdb.boardgame.network.BoardGamesService
+import com.roguekingapps.bgdb.data.BoardGamesRepository
+import com.roguekingapps.bgdb.data.BoardGamesRepositoryImpl
+import com.roguekingapps.bgdb.data.BoardGamesService
 import dagger.Module
 import dagger.Provides
 

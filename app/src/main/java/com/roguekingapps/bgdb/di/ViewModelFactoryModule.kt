@@ -1,9 +1,7 @@
-package com.roguekingapps.bgdb.common.di
+package com.roguekingapps.bgdb.di
 
 import androidx.lifecycle.ViewModel
-import com.roguekingapps.bgdb.boardgame.di.BoardGamesRepositoryModule
-import com.roguekingapps.bgdb.common.viewmodel.ViewModelFactory
-import com.roguekingapps.bgdb.boardgame.di.BoardGamesViewModelModule
+import com.roguekingapps.bgdb.util.ViewModelFactory
 import dagger.Module
 import dagger.Provides
 import javax.inject.Provider

@@ -1,7 +1,7 @@
-package com.roguekingapps.bgdb.boardgame.di
+package com.roguekingapps.bgdb.di
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import com.roguekingapps.bgdb.boardgame.network.BoardGamesService
+import com.roguekingapps.bgdb.data.BoardGamesService
 import com.tickaroo.tikxml.TikXml
 import com.tickaroo.tikxml.retrofit.TikXmlConverterFactory
 import dagger.Module

@@ -1,4 +1,4 @@
-package com.roguekingapps.bgdb.common.viewmodel
+package com.roguekingapps.bgdb.util
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
